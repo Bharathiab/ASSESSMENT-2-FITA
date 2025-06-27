@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function mostRepeatedChar(str) {
+        const charCount = {};
+        let maxChar = '';
+        let maxCount = 0;
+        for (const char of str) {
+            charCount[char] = (charCount[char] || 0) + 1;
+            if (charCount[char] > maxCount) {
+                maxCount = charCount[char];
+                maxChar = char;
+            }
+        }
+        return maxChar;
+    }
+    console.log('1. Most repeated character:', mostRepeatedChar("aabbbcc")); // Output: "b"
+
+
+    function uniqueElements(arr1, arr2) {
+        const set1 = new Set(arr1);
+        const set2 = new Set(arr2);
+        const result = [];
+
+        for (const el of set1) {
+            if (!set2.has(el)) {
+                result.push(el);
+            }
+        }
+        for (const el of set2) {
+            if (!set1.has(el)) {
+                result.push(el);
+            }
+        }
+        return result;
+    }
+    console.log('2. Unique elements:', uniqueElements([1, 2, 3], [2, 4, 5])); 
+
+    
+
+    function longestWord(sentence) {
+        const words = sentence.split(' ');
+        let longest = '';
+        for (const word of words) {
+            if (word.length > longest.length) {
+                longest = word;
+            }
+        }
+        return longest;
+    }
+    console.log('3. Longest word:', longestWord("JavaScript is powerful")); 
+
+   
+    function chain(value) {
+        return {
+            val: value,
+            add(num) {
+                this.val += num;
+                return this;
+            },
+            subtract(num) {
+                this.val -= num;
+                return this;
+            },
+            result() {
+                return this.val;
+            }
+        };
+    }
+    console.log('4. Chain result:', chain(5).add(2).subtract(1).result()); // Output: 6
+
+//     5. Explanation of hoisting 
+//      Hoisting is JavaScript default behavior of moving declaration to top of  current scope (script or function).
+//    This means variables & function declarations can be used before they are declared in code.
+
+    console.log("5.Hosting")
+    console.log(x); // undefined (due to hoisting of variable declaration)
+    var x = 5;
+
+    // The declaration of 'x' is hoisted to the top, but the assignment (=5) is not.
+    // x exists but is undefined in console.log.
+
+    // Function declarations are fully hoisted:
+    greet(); // Output: "Hello!"
+    function greet() {
+        console.log("Hello!");
+     }
+    
+    </script>
+</body>
+</html>
+    
