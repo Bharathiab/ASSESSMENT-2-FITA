@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Units</title>
+    <style>
+        /* Base font size for demonstration */
+        html {
+            font-size: 16px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        .box {
+            background-color: #cce5ff;
+            border: 1px solid #004085;
+            margin-top: 10px;
+            padding: 10px;
+            color: #004085;
+        }
+        /* px example */
+        .px-box {
+            width: 200px;
+            height: 50px;
+            font-size: 16px;
+        }
+        /* em example */
+        .em-box {
+            font-size: 20px; /* parent font size */
+            width: 12em; /* 12 times the font size of this element */
+            height: 3em;
+        }
+        /* rem example */
+        .rem-box {
+            font-size: 1.5rem; /* 1.5 times root font size (html font size) */
+            width: 12rem; /* 12 times root font size */
+            height: 3rem;
+        }
+        /* % example */
+        .percent-container {
+            width: 400px;
+            border: 1px solid #888;
+            padding: 10px;
+        }
+        .percent-box {
+            width: 50%; /* 50% of the parent container width */
+            height: 50px;
+            font-size: 100%;
+            background-color: #d4edda;
+            border: 1px solid #155724;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Units: em, rem, px, and % Examples</h1>
+
+    <section>
+        <h2>1. px</h2>
+        <p>Pixels are absolute units representing a fixed size on the screen.</p>
+        <div class="box px-box">Width: 200px, Height: 50px, Font-size: 16px</div>
+    </section>
+
+    <section>
+        <h2>2. em </h2>
+        <p>
+            The <code>em</code> unit is relative to the font size of the element's parent.
+            
+        </p>
+        <div class="box em-box">Width: 12em, Height: 3em, Font-size: 20px</div>
+    </section>
+
+    <section>
+        <h2>3. rem </h2>
+        <p>
+            The <code>rem</code> unit is relative to the root element's font size (usually the <code>html</code> element).
+        </p>
+        <div class="box rem-box">Width: 12rem, Height: 3rem, Font-size: 1.5rem (24px)</div>
+    </section>
+
+    <section>
+        <h2>4. % </h2>
+        <p>
+            Percentage units are relative to the size of the parent element.
+            For width and height it is relative to the parent's width and height respectively.
+            For font-size it is relative to the parent's font size.
+        </p>
+        <div class="percent-container">
+            Parent container width: 400px
+            <div class="percent-box">Width: 50%, Height: 50px, Font-size: 100%</div>
+        </div>
+    </section>
+</body>
+</html>
